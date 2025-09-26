@@ -10,6 +10,7 @@
 - Proprietary cloud based password managers offer a lot of utility (syncing) while providing a substantial drawback of questionable, or unknown security practices on the backend. As well as a substantial database breach risk.
 - Currently available opensource and locally hosted providers like keepassxc lack proper local/global infrastructure for flexible workflows.
 - This lack of convenience on the open source side is likely to lead people into very fast and loose practices such as uploading keyfiles in places they shouldn't be, placing databases in uncessary levels of risk. Providing improved usability will allow individuals to practice better operational security.
+- Develop and expand terminology and syntax to better describe the architectures.
 
 ### Current architecture focus and design goals:
 
@@ -26,6 +27,8 @@
 - KeyDrive: A usb drive, flashed with some combination of partitions, LVM, LUKs and storing secrets used for authing, Private keys, SSH keys, password manager databases, keyfiles, anything of the sort.
 - SecureTunnel: A secure transport through the internet, or some other form of IO such as USB. Using SSH as a backbone for support, and security.
 - AuthServer: Future LAN git integration for providing access to files. and version control through a centralized git service hosted by the user. (in order to reduce attack surface area, never connect it to the broader internet)
+- DB: Password Manager database, in this case a kbdx file, for keepassxc.
+- Architecture: Naming as follows `#keyfile #secrets #system` Where `#` is a placeholder for the prefix ident. The prefix idents are as follows: ! = unencrypted, ? = Encrypted. The syntax can be expanded at will, for example: `?keyfile/DB ?secrets ?supersecret ?system` currently sorted in order of usage, KeyDrive -> System where KeyDrive takes precedence. Superfluous paritions such as remaining storage space or generic encrypted partitions are not listed. Those should be specified under the architecture itself rather than the naming convention as they're not relevant to security.
 
 ### Future design goals, and project ambitions:
 
