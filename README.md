@@ -1,4 +1,4 @@
-# Practical modular crypto implemented on top of established cryptographic softare
+# Practical modular crypto implemented on top of established cryptographic software
 
 ### Goals:
 
@@ -22,7 +22,7 @@
 
 ### Terminology:
 
-- UnauthorizedSystem: A system not controlled nor vetted by the end user, should be avoided at all costs, however the architecture should still be designed in a way to mitigate potential leaks and vulnerabilities via segregation of secrets, tiered encryption, and operational security practices.
+- UnauthorizedSystem: A system not controlled nor vetted by the end user, should be avoided at all costs, however the architecture should still be designed in a way to mitigate potential leaks and vulnerabilities via separation of secrets, tiered encryption, and good opsec practices.
 - AuthorizedSystem: A system controlled and vetted by the user (potential point of attack) Assumed to have disk encryption, or at least a secure encrypted partition specifically for any additional provided utility.
 - KeyDrive: A usb drive, flashed with some combination of partitions, LVM, LUKs and storing secrets used for authing, Private keys, SSH keys, password manager databases, keyfiles, anything of the sort.
 - SecureTunnel: A secure transport through the internet, or some other form of IO such as USB. Using SSH as a backbone for support, and security.
@@ -33,7 +33,7 @@
 
 ### Future design goals, and project ambitions:
 
-- Develop a working proof of concept KeyDrive demonstrating the functionality of the architecture. As well as it's utility.
+- Develop a working proof of concept KeyDrive, to demonstrate the architecture. 
 - Provide automation in the form of scripting to make generation of generic keyfiles and KeyDrives easy.
 - Automated interactions on the side of the KeyDrive, as well as AuthorizedSystems via Daemons.
 - The architecture should be designed in such a way that it doesn't leave any traces of itself on UnauthorzedSystems, private/public computers or ephemeral distributions like tails.
